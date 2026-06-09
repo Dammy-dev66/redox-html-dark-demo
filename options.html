@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upwork Portfolio Assistant Settings</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell options-shell">
+      <header>
+        <h1>Settings</h1>
+        <p>Add your free Groq API key to generate stronger portfolio text. The key is stored locally in Chrome.</p>
+      </header>
+
+      <form id="settingsForm" class="panel">
+        <label>
+          Groq API key
+          <input id="groqApiKey" type="password" autocomplete="off" placeholder="gsk_...">
+        </label>
+        <label>
+          Groq model
+          <input id="groqModel" value="llama-3.1-8b-instant">
+        </label>
+        <button type="submit">Save Settings</button>
+        <p id="status" role="status"></p>
+      </form>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
