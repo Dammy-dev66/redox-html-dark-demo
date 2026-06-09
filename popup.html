@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upwork Portfolio Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <h1>Upwork Portfolio Assistant</h1>
+        <p>Generate one portfolio entry per uploaded image and fill the open Upwork portfolio modal.</p>
+      </header>
+
+      <section class="panel">
+        <label>
+          Portfolio images
+          <input id="imageFiles" type="file" accept="image/*" multiple>
+        </label>
+        <label>
+          Project style
+          <select id="projectStyle">
+            <option value="landing">Landing page</option>
+            <option value="optimization">Landing page optimization</option>
+            <option value="webdesign">Web design</option>
+            <option value="uxui">UX & UI</option>
+            <option value="graphic">Graphic Design</option>
+          </select>
+        </label>
+        <label>
+          Optional context
+          <textarea id="context" rows="3" placeholder="Example: SaaS lead generation page for a healthcare brand"></textarea>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="meta">
+          <span id="queueCount">0 images loaded</span>
+          <span id="currentPosition">No active item</span>
+        </div>
+        <select id="portfolioSelect"></select>
+        <div class="row">
+          <button id="fillCurrent" type="button">Fill This Item</button>
+          <button id="fillAndPreview" type="button" class="secondary">Fill + Preview</button>
+        </div>
+        <div class="row">
+          <button id="generateAi" type="button" class="secondary">Generate With AI</button>
+          <button id="openSettings" type="button" class="secondary">Settings</button>
+        </div>
+        <div class="row">
+          <button id="previousItem" type="button" class="secondary">Previous</button>
+          <button id="nextItem" type="button" class="secondary">Next</button>
+        </div>
+        <p id="status" role="status"></p>
+      </section>
+
+      <section class="panel compact">
+        <h2>Fixed skills and deliverables</h2>
+        <p>Landing page, Landing page optimization, Web design, UX & UI, Graphic Design</p>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
